@@ -36,8 +36,8 @@ autorLibro6 = "Joshua Bloch"
 
 
 #Generacion de data restante del ticket
-#usamos la libreria datetime para la fecha y el metodo strftime para formatear la fecha.
-fechaPrestamo = datetime.now().strftime("%d/%m/%Y")
+#usamos la libreria datetime para la fecha actual.
+fechaPrestamo = datetime.now()
 multaPorDia = 5.00
 
 #Declaracion de variables para almacenar los datos del cliente y el libro seleccionado.
@@ -69,10 +69,15 @@ opcionLibro = int(input("Seleccione el libro que desea prestar (1-6): "))
 print()
 #Validacion de datos, usamos el metodo exit() para finalizar el proceso.
 fechaDevolucion = input("Ingrese la fecha de devolucion expresada en (dd/mm/yyyy): ")
+
 if fechaDevolucion.count("/") != 2:
     print("Formato de fecha no valido, reinicie el programa e ingrese una fecha valida.")
     exit()
-if fechaDevolucion < fechaPrestamo:
+
+# convertir string a datetime
+fechaDevolucion_dt = datetime.strptime(fechaDevolucion, "%d/%m/%Y")
+
+if fechaDevolucion_dt < fechaPrestamo:
     print("La fecha de devolucion no puede ser anterior a la fecha de prestamo, reinicie el programa e ingrese una fecha valida.")
     exit()
 
@@ -92,8 +97,8 @@ match opcionLibro:
         print(f"║ Libro seleccionado : {libroSeleccionado}")
         print(f"║ Autor              : {autorSeleccionado}")
         print("╠══════════════════════════════════════════════════════════╣")
-        print(f"║ Fecha préstamo     : {fechaPrestamo}")
-        print(f"║ Fecha devolución   : {fechaDevolucion}")
+        print(f"║ Fecha préstamo     : {fechaPrestamo.strftime('%d/%m/%Y')}")
+        print(f"║ Fecha devolución   : {fechaDevolucion_dt.strftime('%d/%m/%Y')}")
         print("╠══════════════════════════════════════════════════════════╣")
         print("║ Estado del préstamo: ACTIVO                              ║")
         print("║ Código préstamo    : PREST-001                           ║")
@@ -127,8 +132,8 @@ match opcionLibro:
         print(f"║ Libro seleccionado : {libroSeleccionado}")
         print(f"║ Autor              : {autorSeleccionado}")
         print("╠══════════════════════════════════════════════════════════╣")
-        print(f"║ Fecha préstamo     : {fechaPrestamo}")
-        print(f"║ Fecha devolución   : {fechaDevolucion}")
+        print(f"║ Fecha préstamo     : {fechaPrestamo.strftime('%d/%m/%Y')}")
+        print(f"║ Fecha devolución   : {fechaDevolucion_dt.strftime('%d/%m/%Y')}")
         print("╠══════════════════════════════════════════════════════════╣")
         print("║ Estado del préstamo: ACTIVO                              ║")
         print("║ Código préstamo    : PREST-001                           ║")
@@ -161,8 +166,8 @@ match opcionLibro:
         print(f"║ Libro seleccionado : {libroSeleccionado}")
         print(f"║ Autor              : {autorSeleccionado}")
         print("╠══════════════════════════════════════════════════════════╣")
-        print(f"║ Fecha préstamo     : {fechaPrestamo}")
-        print(f"║ Fecha devolución   : {fechaDevolucion}")
+        print(f"║ Fecha préstamo     : {fechaPrestamo.strftime('%d/%m/%Y')}")
+        print(f"║ Fecha devolución   : {fechaDevolucion_dt.strftime('%d/%m/%Y')}")
         print("╠══════════════════════════════════════════════════════════╣")
         print("║ Estado del préstamo: ACTIVO                              ║")
         print("║ Código préstamo    : PREST-001                           ║")
@@ -195,8 +200,8 @@ match opcionLibro:
         print(f"║ Libro seleccionado : {libroSeleccionado}")
         print(f"║ Autor              : {autorSeleccionado}")
         print("╠══════════════════════════════════════════════════════════╣")
-        print(f"║ Fecha préstamo     : {fechaPrestamo}")
-        print(f"║ Fecha devolución   : {fechaDevolucion}")
+        print(f"║ Fecha préstamo     : {fechaPrestamo.strftime('%d/%m/%Y')}")
+        print(f"║ Fecha devolución   : {fechaDevolucion_dt.strftime('%d/%m/%Y')}")
         print("╠══════════════════════════════════════════════════════════╣")
         print("║ Estado del préstamo: ACTIVO                              ║")
         print("║ Código préstamo    : PREST-001                           ║")
@@ -229,8 +234,8 @@ match opcionLibro:
         print(f"║ Libro seleccionado : {libroSeleccionado}")
         print(f"║ Autor              : {autorSeleccionado}")
         print("╠══════════════════════════════════════════════════════════╣")
-        print(f"║ Fecha préstamo     : {fechaPrestamo}")
-        print(f"║ Fecha devolución   : {fechaDevolucion}")
+        print(f"║ Fecha préstamo     : {fechaPrestamo.strftime('%d/%m/%Y')}")
+        print(f"║ Fecha devolución   : {fechaDevolucion_dt.strftime('%d/%m/%Y')}")
         print("╠══════════════════════════════════════════════════════════╣")
         print("║ Estado del préstamo: ACTIVO                              ║")
         print("║ Código préstamo    : PREST-001                           ║")
@@ -263,8 +268,8 @@ match opcionLibro:
         print(f"║ Libro seleccionado : {libroSeleccionado}")
         print(f"║ Autor              : {autorSeleccionado}")
         print("╠══════════════════════════════════════════════════════════╣")
-        print(f"║ Fecha préstamo     : {fechaPrestamo}")
-        print(f"║ Fecha devolución   : {fechaDevolucion}")
+        print(f"║ Fecha préstamo     : {fechaPrestamo.strftime('%d/%m/%Y')}")
+        print(f"║ Fecha devolución   : {fechaDevolucion_dt.strftime('%d/%m/%Y')}")
         print("╠══════════════════════════════════════════════════════════╣")
         print("║ Estado del préstamo: ACTIVO                              ║")
         print("║ Código préstamo    : PREST-001                           ║")
