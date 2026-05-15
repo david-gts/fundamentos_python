@@ -42,12 +42,15 @@ multaPorDia = 5.00
 
 #Declaracion de variables para almacenar los datos del cliente y el libro seleccionado.
 nombreCliente = input("Ingrese los nombres del cliente: ")
+print()
 apellidoCliente = input("Ingrese los apellidos del cliente: ")
+print()
 dni = input("Ingrese el DNI del cliente: ")
+print()
 #Validacion de datos, usamos el metodo exit() para finalizar el proceso.
 #Usamos el metodo len() para validar la longitud del DNI
 if len(dni) != 8:
-    print("DNI no valido, reinicie el programa e ingrese un DNI valido.")
+    print("El DNI debe contener 8 caracteres Ejm: 12345678, reinicie el programa e ingrese un DNI valido.")
     exit()
 libroSeleccionado = ""
 autorSeleccionado = ""
